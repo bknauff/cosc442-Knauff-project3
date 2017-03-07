@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 /**
  * The class <code>VendingMachineExceptionTest</code> contains tests for the class <code>{@link VendingMachineException}</code>.
  *
- * @generatedBy CodePro at 3/6/17 7:50 PM
+ * @generatedBy CodePro at 3/6/17 3:40 PM
  * @author bkjr8
  * @version $Revision: 1.0 $
  */
@@ -16,7 +16,7 @@ public class VendingMachineExceptionTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testVendingMachineException_1()
@@ -37,7 +37,7 @@ public class VendingMachineExceptionTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testVendingMachineException_2()
@@ -60,7 +60,7 @@ public class VendingMachineExceptionTest {
 	 * @throws Exception
 	 *         if the initialization fails for some reason
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Before
 	public void setUp()
@@ -74,7 +74,7 @@ public class VendingMachineExceptionTest {
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@After
 	public void tearDown()
@@ -87,7 +87,7 @@ public class VendingMachineExceptionTest {
 	 *
 	 * @param args the command line arguments
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	public static void main(String[] args) {
 		new org.junit.runner.JUnitCore().run(VendingMachineExceptionTest.class);

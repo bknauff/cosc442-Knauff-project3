@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 /**
  * The class <code>VendingMachineTest</code> contains tests for the class <code>{@link VendingMachine}</code>.
  *
- * @generatedBy CodePro at 3/6/17 7:50 PM
+ * @generatedBy CodePro at 3/6/17 3:40 PM
  * @author bkjr8
  * @version $Revision: 1.0 $
  */
@@ -16,7 +16,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testVendingMachine_1()
@@ -26,8 +26,8 @@ public class VendingMachineTest {
 
 		// add additional test code here
 		assertNotNull(result);
-		assertEquals(0.0, result.getBalance(), 1.0);
 		assertEquals(0.0, result.returnChange(), 1.0);
+		assertEquals(0.0, result.getBalance(), 1.0);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testVendingMachine_2()
@@ -45,8 +45,8 @@ public class VendingMachineTest {
 
 		// add additional test code here
 		assertNotNull(result);
-		assertEquals(0.0, result.getBalance(), 1.0);
 		assertEquals(0.0, result.returnChange(), 1.0);
+		assertEquals(0.0, result.getBalance(), 1.0);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testAddItem_1()
@@ -62,11 +62,17 @@ public class VendingMachineTest {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
 		VendingMachineItem item = new VendingMachineItem("", 1.0);
+		VendingMachineItem item2 = new VendingMachineItem("", 1.0);
+		VendingMachineItem item3 = new VendingMachineItem("", 1.0);
+		VendingMachineItem item4 = new VendingMachineItem("", 1.0);
 		String code = "A";
 
 		fixture.addItem(item, code);
 
 		// add additional test code here
+		fixture.addItem(item2, VendingMachine.D_CODE);
+		fixture.addItem(item3, VendingMachine.B_CODE);
+		fixture.addItem(item4, VendingMachine.C_CODE);
 	}
 
 	/**
@@ -74,7 +80,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testAddItem_2()
@@ -94,7 +100,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testAddItem_3()
@@ -103,7 +109,10 @@ public class VendingMachineTest {
 		fixture.balance = 1.0;
 		VendingMachineItem item = new VendingMachineItem("", 1.0);
 		String code = "";
+		String code1 = "A";
 
+		fixture.addItem(item, code1);
+		fixture.addItem(item, code1);
 		fixture.addItem(item, code);
 
 		// add additional test code here
@@ -114,7 +123,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testGetBalance_1()
@@ -133,7 +142,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testGetItem_1()
@@ -153,7 +162,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testGetItem_2()
@@ -173,7 +182,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testInsertMoney_1()
@@ -192,14 +201,14 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testInsertMoney_2()
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
-		double amount = -4.9E-324;
+		double amount = -5.0;
 
 		fixture.insertMoney(amount);
 
@@ -211,7 +220,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testMakePurchase_1()
@@ -224,6 +233,9 @@ public class VendingMachineTest {
 
 		// add additional test code here
 		assertEquals(false, result);
+		VendingMachineItem item = new VendingMachineItem("",1.0);
+		fixture.addItem(item, code);
+		assertTrue(fixture.makePurchase(code));
 	}
 
 	/**
@@ -231,7 +243,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testMakePurchase_2()
@@ -251,7 +263,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testMakePurchase_3()
@@ -271,7 +283,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testMakePurchase_4()
@@ -291,7 +303,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testRemoveItem_1()
@@ -311,7 +323,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testRemoveItem_2()
@@ -324,6 +336,7 @@ public class VendingMachineTest {
 
 		// add additional test code here
 		assertNotNull(result);
+		fixture.removeItem(code);
 	}
 
 	/**
@@ -331,7 +344,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
 	public void testRemoveItem_3()
@@ -351,7 +364,7 @@ public class VendingMachineTest {
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Test
 	public void testReturnChange_1()
@@ -371,7 +384,7 @@ public class VendingMachineTest {
 	 * @throws Exception
 	 *         if the initialization fails for some reason
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@Before
 	public void setUp()
@@ -385,7 +398,7 @@ public class VendingMachineTest {
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	@After
 	public void tearDown()
@@ -398,7 +411,7 @@ public class VendingMachineTest {
 	 *
 	 * @param args the command line arguments
 	 *
-	 * @generatedBy CodePro at 3/6/17 7:50 PM
+	 * @generatedBy CodePro at 3/6/17 3:40 PM
 	 */
 	public static void main(String[] args) {
 		new org.junit.runner.JUnitCore().run(VendingMachineTest.class);
